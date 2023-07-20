@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const Navigation = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
     return (
-        <div className="flex items-center justify-between max-md:justify-end">      
+        <div className="flex items-center justify-between md:justify-center max-md:justify-end">      
         <nav>
         {/* Menu mobile */}
         <section className="flex md:hidden lg:hidden">
@@ -54,7 +54,7 @@ const Navigation = () => {
     </div>
     </section>
     {/* Desktop menu */}
-    <ul className='hidden md:flex space-x-10 pt-5 justify-evenly'>
+    <ul className='hidden md:flex space-x-10 pt-5'>
     <NavLink to="/" className="nav-link">
     <li>/home<span className='badge relative bottom-4 right-3 text-xs text-green-dark'>01</span></li>
     </NavLink>
