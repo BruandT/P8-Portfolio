@@ -3,10 +3,10 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-      <footer id='contact' className='text-white flex h-80'>
-        <div className='w-1/4 bg-folly dark:bg-green-dark max-md:w-1/2'></div>
-        <div className='w-3/4 bg-black max-md:w-1/2'>
-          <p>© 2023 Thomas Bruand.</p>
+      <footer id='contact' className='flex h-auto max-md:flex-col'>
+        <div className='w-1/4 h-auto bg-skin-bg-color max-md:w-full'></div>
+        <div className='w-3/4 flex flex-col items-center bg-skin-bg-base max-md:w-full'>
+          <p className="text-skin-base">© 2023 Thomas Bruand.</p>
         </div>
       </footer>
     </>

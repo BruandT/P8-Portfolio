@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, React } from "react";
 import Navigation from "../Navigation/Navigation";
 
 function Header() {
@@ -21,19 +20,20 @@ function Header() {
 
   return (
     <>
-      <header className='w-full h-20 bg-white dark:bg-dark px-10 menuMobile'>
+      <header className='absolute w-full bg-skin-bg-base menu-mobile'>
         <div
-          id='menuNavBlur'
-          className={`w-full h-20 items-center backdrop-blur-lg dark:backdrop-blur-sm dark:bg-dark/90 grid grid-cols-3 max-md:grid-cols-2 text-dark dark:text-white ${
+          className={`w-full h-20 px-10 items-center bg-skin-bg-base/95 shadow-header grid grid-cols-3 max-md:grid-cols-2 text-skin-base ${
             isSticky ? "sticky" : ""
           }`}
         >
           <a href='#home'>
             <p className='h-full'>
-              <span className='text-folly dark:text-green-dark text-4xl max-md:text-2xl'>
+              <span className='text-skin-color font-semibold text-4xl max-md:text-2xl'>
                 &gt;_
               </span>
-              <span className='text-5xl max-md:text-4xl'>TB</span>
+              <span className='text-skin-base text-5xl font-semibold max-md:text-4xl'>
+                TB
+              </span>
             </p>
           </a>
           <Navigation />

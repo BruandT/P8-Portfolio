@@ -27,36 +27,39 @@ function Home() {
 
   return (
     <>
-      <main className='w-full bg-white dark:bg-dark text-dark dark:text-white h-auto flex flex-col items-center pt-40 px-10'>
+      <main className='w-full bg-skin-bg-base text-skin-base h-auto flex flex-col items-center'>
         {/*  Debut partie supp du site */}
-        <div className='bg-folly/80 dark:bg-green-dark flex items-center justify-center w-2/3 h-80 mb-20 max-md:w-full'>
-          <div className='flex flex-col items-center'>
-            <h1 className='text-6xl max-md:text-4xl text-center'>
-              {/* Machine a ecrire */}
-              <Typewriter
-                onInit={(typewriter) => {
-                  typewriter.typeString("THOMAS BRUAND").start();
-                }}
-              />
-            </h1>
-            <h2 className='text-4xl uppercase max-md:text-2xl'>
-              web developer
-            </h2>
+        <section className='w-full h-screen pt-40 px-10 flex flex-col items-center linear-bg'>
+          <div className='bg-skin-bg-color/80 flex items-center justify-center w-2/3 h-80 mb-20 max-md:w-full '>
+            <div className='flex flex-col items-center'>
+              <h1 className='text-6xl max-md:text-4xl text-center'>
+                {/* Machine a ecrire */}
+                <Typewriter
+                  onInit={(typewriter) => {
+                    typewriter.typeString("THOMAS BRUAND").start();
+                  }}
+                />
+              </h1>
+              <h2 className='text-4xl uppercase max-md:text-2xl'>
+                web developer
+              </h2>
+            </div>
           </div>
-        </div>
-        {/* Fin partie supp du site */}
-        {/* SVG scroll */}
-        <Mouse />
+          {/* Fin partie supp du site */}
+          {/* SVG scroll */}
+          <Mouse />
+        </section>
         {/* Debut partie about */}
         <section
           id='about'
-          className='w-2/3 h-full flex flex-col pt-24 items-center max-md:w-full'
+          className='w-2/3 h-full flex flex-col pt-20 items-center max-md:w-full'
         >
-          <h2 className='text-dark dark:text-white text-6xl mb-28 max-md:text-4xl'>
+          <h2 className='text-skin-base text-6xl font-semibold mb-5 max-md:text-4xl'>
             About me
           </h2>
+          <div className="w-10 h-2 mb-28 rounded bg-skin-bg-color"></div>
           <div className='flex items-center'>
-            <p className='w-full text-xl'>
+            <p id="hover-text" className='w-full text-xl'>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Consectetur inventore quis rem? Cum quos accusamus quisquam! Ut
               recusandae quod eaque nobis, impedit ipsum velit quis, est eveniet
@@ -65,7 +68,7 @@ function Home() {
               commodi voluptas earum maxime.
             </p>
             <div className='w-1/2 flex flex-col justify-center items-center max-lg:hidden'>
-              <img className="w-2/3" src='./assets/image/Illust.png' alt=''/>
+              <img className='w-2/3' src='./assets/image/Illust.png' alt='' />
             </div>
           </div>
           <div className='min-w-2/3 grid grid-cols-3 grid-rows-1 mt-56 mb-40 max-md:w-full max-md:grid-cols-1 max-md:grid-rows-3'>
@@ -87,23 +90,28 @@ function Home() {
         {/* Debut partie work */}
         <section
           id='work'
-          className='w-2/3 h-full flex flex-col pt-24 items-center max-md:w-full max-md:h-full'
+          className='flex flex-col items-center linear-bg'
         >
-          <h2 className='text-dark dark:text-white text-6xl mb-28 max-md:text-4xl'>Work</h2>
-          <div className='w-full h-full flex'>
-            {isLoading ? (
-              <p>Loading..</p>
-            ) : (
-              <div className='h-screen flex flex-row flex-wrap max-lg:flex-col max-lg:flex-nowrap'>
-                {posts.map((post) => (
-                  <Card key={post.id} post={post} />
-                ))}
-              </div>
-            )}
+          <div className="w-2/3 h-full flex flex-col pt-24 items-center max-md:w-full max-md:h-full">
+            <h2 className='text-skin-base text-6xl font-semibold mb-6 max-md:text-4xl'>
+              Work
+            </h2>
+            <div className="w-10 h-2 mb-28 rounded bg-skin-bg-color"></div>
+            <div className='w-full h-full flex'>
+              {isLoading ? (
+                <p>Loading..</p>
+              ) : (
+                <div className='h-screen flex flex-row flex-wrap max-lg:flex-col max-lg:flex-nowrap'>
+                  {posts.map((post) => (
+                    <Card key={post.id} post={post} />
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </section>
         {/* Fin partie work */}
-      </main>
+      </main>   
     </>
   );
 }

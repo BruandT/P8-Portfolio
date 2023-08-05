@@ -1,33 +1,11 @@
 import { useState, useEffect, React } from "react";
 
 const Navigation = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
-
-  useEffect(() => {
-    // Fonction pour détecter le changement de thème
-    const handleThemeChange = (e) => {
-      setIsDarkMode(e.matches);
-    };
-
-    // Écouter les changements de thème
-    const darkModeMediaQuery = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    );
-    darkModeMediaQuery.addEventListener("change", handleThemeChange);
-
-    // Déterminer le thème initial
-    setIsDarkMode(darkModeMediaQuery.matches);
-
-    // Nettoyer l'écouteur lors du démontage du composant
-    return () =>
-      darkModeMediaQuery.removeEventListener("change", handleThemeChange);
-  }, []);
-
+  
   useEffect(() => {
     // Mettre à jour l'overflow du body lorsque l'état de isNavOpen change
     document.body.style.overflow = isNavOpen ? "hidden" : "initial";
-    document.getElementById("menuNavBlur").classList.remove("backdrop-blur-sm");
 
     // Nettoyer l'effet lorsque le composant est démonté
     return () => {
@@ -62,29 +40,22 @@ const Navigation = () => {
               className='space-y-2'
               onClick={() => setIsNavOpen((prev) => !prev)}
             >
-              <span className='block h-0.5 w-8 animate-pulse bg-folly dark:bg-green-dark'></span>
-              <span className='block h-0.5 w-8 animate-pulse bg-folly dark:bg-green-dark'></span>
-              <span className='block h-0.5 w-8 animate-pulse bg-folly dark:bg-green-dark'></span>
+              <span className='block h-0.5 w-8 animate-pulse bg-skin-bg-color'></span>
+              <span className='block h-0.5 w-8 animate-pulse bg-skin-bg-color'></span>
+              <span className='block h-0.5 w-8 animate-pulse bg-skin-bg-color'></span>
             </div>
             {/* Ouverture du menu burger */}
             <div
-              className={`overflow-hidden bg-white ${
-                isDarkMode ? "dark:bg-black-bg" : ""
-              } ${
-                isNavOpen
-                  ? isDarkMode
-                    ? "darkShowMenuNav"
-                    : "showMenuNav"
-                  : "hideMenuNav"
-              }`}
+              className={`overflow-hidden bg-skin-bg-base
+               ${isNavOpen ? "show-menu-nav" : "hide-menu-nav"}`}
             >
               <div
-                className='absolute top-5 right-10 '
+                className='absolute top-5 right-10'
                 onClick={() => setIsNavOpen(false)}
               >
                 {/* SVG croix */}
                 <svg
-                  className='h-8 w-8 text-folly dark:text-green-dark'
+                  className='h-8 w-8 text-skin-color'
                   viewBox='0 0 24 24'
                   fill='none'
                   stroke='currentColor'
@@ -96,33 +67,33 @@ const Navigation = () => {
                   <line x1='6' y1='6' x2='18' y2='18' />
                 </svg>
               </div>
-              <ul className='h-full pt-5 flex flex-col justify-evenly bg-white dark:bg-dark uppercase'>
-                <a
+              <ul className='h-full pt-5 flex flex-col justify-evenly bg-skin-bg-base uppercase'>
+                <span
                   onClick={() => {
                     setIsNavOpen(false);
                     scrollToTop();
                   }}
                 >
-                  <li>
-                    <span className='text-folly dark:text-green-dark'>/ </span>
+                  <li className="font-semibold">
+                    <span className='text-skin-color'>/ </span>
                     home
                   </li>
-                </a>
+                </span>
                 <a href='#about' onClick={() => setIsNavOpen(false)}>
-                  <li>
-                    <span className='text-folly dark:text-green-dark'>/ </span>
+                  <li className="font-semibold">
+                    <span className='text-skin-color'>/ </span>
                     about
                   </li>
                 </a>
                 <a href='#work' onClick={() => setIsNavOpen(false)}>
-                  <li>
-                    <span className='text-folly dark:text-green-dark'>/ </span>
+                  <li className="font-semibold">
+                    <span className='text-skin-color'>/ </span>
                     work
                   </li>
                 </a>
                 <a href='#contact' onClick={() => setIsNavOpen(false)}>
-                  <li>
-                    <span className='text-folly dark:text-green-dark'>/ </span>
+                  <li className="font-semibold">
+                    <span className='text-skin-color'>/ </span>
                     contact
                   </li>
                 </a>
@@ -130,31 +101,31 @@ const Navigation = () => {
             </div>
           </section>
           {/* Desktop menu */}
-          <ul className='hidden md:flex space-x-10 pt-5'>
-            <li className='nav-link' onClick={() => handleButtonClick("home")}>
+          <ul className='text-skin-base hidden md:flex space-x-10 pt-5'>
+            <li className='nav-link font-semibold' onClick={() => handleButtonClick("home")}>
               /home
-              <span className='badge relative bottom-4 right-3 text-xs text-folly dark:text-green-dark'>
+              <span className='badge relative bottom-4 right-3 text-xs text-skin-color'>
                 01
               </span>
             </li>
-            <li className='nav-link' onClick={() => handleButtonClick("about")}>
+            <li className='nav-link font-semibold' onClick={() => handleButtonClick("about")}>
               /about
-              <span className='badge relative bottom-4 right-3 text-xs text-folly dark:text-green-dark'>
+              <span className='badge relative bottom-4 right-3 text-xs text-skin-color'>
                 02
               </span>
             </li>
-            <li className='nav-link' onClick={() => handleButtonClick("work")}>
+            <li className='nav-link font-semibold' onClick={() => handleButtonClick("work")}>
               /work
-              <span className='badge relative bottom-4 right-3 text-xs text-folly dark:text-green-dark'>
+              <span className='badge relative bottom-4 right-3 text-xs text-skin-color'>
                 03
               </span>
             </li>
             <li
-              className='nav-link'
+              className='nav-link font-semibold'
               onClick={() => handleButtonClick("contact")}
             >
               /contact
-              <span className='badge relative bottom-4 right-3 text-xs text-folly dark:text-green-dark'>
+              <span className='badge relative bottom-4 right-3 text-xs text-skin-color'>
                 04
               </span>
             </li>

@@ -22,24 +22,33 @@ const Mouse = () => {
       darkModeMediaQuery.removeEventListener("change", handleThemeChange);
   }, []);
 
-    const handleButtonClick = () => {
-        // Trouver l'élément cible par son identifiant (ID) ou en utilisant une référence React (ref)
-        const targetElement = document.getElementById('about'); // Remplacez 'elementId' par l'ID de l'élément cible
-    
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: 'smooth', // Fait le défilement en douceur
-            block: 'start',     // Défilement vers le haut de l'élément cible
-          });
-        }
-      };
-    
+  const handleButtonClick = () => {
+    // Trouver l'élément cible par son identifiant (ID) ou en utilisant une référence React (ref)
+    const targetElement = document.getElementById("about"); // Remplacez 'elementId' par l'ID de l'élément cible
+
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth", // Fait le défilement en douceur
+        block: "start", // Défilement vers le haut de l'élément cible
+      });
+    }
+  };
+
   return (
     <>
-      <button id='mouse' className='w-32 h-32 mt-32 mb-40 animate-pulse' onClick={handleButtonClick}>
-        <img  src={isDarkMode
-                    ? "./assets/icon/mouse.svg"
-                    : "./assets/icon/mouse-dark.svg"} alt="Icone de souris pour scroll" />
+      <button
+        id='mouse'
+        className='w-32 h-32 mt-32 mb-20 animate-pulse'
+        onClick={handleButtonClick}
+      >
+        <img
+          src={
+            isDarkMode
+              ? "./assets/icon/mouse.svg"
+              : "./assets/icon/mouse-dark.svg"
+          }
+          alt='Icone de souris pour scroll'
+        />
       </button>
     </>
   );
