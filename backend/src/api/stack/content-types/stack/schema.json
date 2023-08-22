@@ -4,8 +4,7 @@
   "info": {
     "singularName": "stack",
     "pluralName": "stacks",
-    "displayName": "stack",
-    "description": ""
+    "displayName": "Stack"
   },
   "options": {
     "draftAndPublish": true
@@ -16,21 +15,17 @@
       "type": "string"
     },
     "image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
     },
-    "categories": {
+    "works": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::category.category",
-      "inversedBy": "stacks"
+      "target": "api::work.work",
+      "mappedBy": "stacks"
     }
   }
 }

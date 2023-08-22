@@ -29,25 +29,23 @@
     "year": {
       "type": "biginteger"
     },
-    "modal": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
-    "tag1": {
+    "link": {
       "type": "string"
     },
-    "tag2": {
+    "problem": {
       "type": "string"
     },
-    "tag3": {
+    "link_video": {
       "type": "string"
     },
-    "tag4": {
-      "type": "string"
+    "stacks": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::stack.stack",
+      "inversedBy": "works"
+    },
+    "road_map": {
+      "type": "text"
     }
   }
 }

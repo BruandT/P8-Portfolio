@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "images",
+  "collectionName": "socials",
   "info": {
-    "singularName": "image",
-    "pluralName": "images",
-    "displayName": "image",
+    "singularName": "social",
+    "pluralName": "socials",
+    "displayName": "social",
     "description": ""
   },
   "options": {
@@ -13,7 +13,7 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "text"
+      "type": "string"
     },
     "image": {
       "type": "media",
@@ -22,6 +22,9 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "link": {
+      "type": "string"
     }
   }
 }
