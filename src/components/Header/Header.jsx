@@ -3,6 +3,18 @@ import Navigation from "../Navigation/Navigation";
 
 function Header() {
   const [isSticky, setIsSticky] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); 
+    };
+  
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,13 +28,13 @@ function Header() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <>
-      <header className='absolute w-full bg-skin-bg-base menu-mobile'>
+      <header className={`absolute w-full bg-skin-bg-base ${isMobile ? "menu-mobile" : ""}`}>
         <div
-          className={`w-full h-20 px-10 items-center bg-skin-bg-base/95 shadow-header grid grid-cols-3 max-md:grid-cols-2 text-skin-base ${
+          className={`w-full h-20 px-10 items-center bg-skin-bg-base/95 shadow-header grid grid-cols-3 max-lg:grid-cols-2 text-skin-base ${
             isSticky ? "sticky" : ""
           }`}
         >
