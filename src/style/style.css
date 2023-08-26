@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	margin: 0;
+	padding: 0;
+}
+/* Color pour les themes */
+@layer base {
+	:root {
+		--color-text-base: 2, 43, 58;
+		--color-text-light: 255, 255, 255;
+		--color-text-color: 31, 122, 140;
+		--color-fill: 31, 122, 140;
+		--color-bg-base: 255, 255, 255;
+		--color-bg-shadow: 200, 202, 195;
+		--color-bg-base-hover: 95, 96, 99;
+		--color-bg-color: 31, 122, 140;
+	}
+}
+/* Shadow sous le header */
+.shadow-header{ 
+	box-shadow: 0 10px 40px rgba(0,0,0,.1);	
+}
+/* Background pour certaine section */
+.linear-bg {
+	background: linear-gradient(to right,rgba(245,245,245,.8),rgba(245,245,245,.8)),url(https://d33wubrfki0l68.cloudfront.net/daac8858fd4a0ccea44f59dfd079c3c16c263f33/c157c/assets/svg/common-bg.svg);
+}
+/* Classes pour le nav mobile et desktop */
+.nav-link:hover {
+	cursor: pointer;
+	color: #646363;
+	transition: all 0.3s ease-out;
+}
+.nav-link:hover .badge {
+	color: #646363;
+	transition: all 0.3s ease-out;
+}
+.hide-menu-nav {
+	display: none;
+}
+.show-menu-nav {
+	display: block;
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	left: 0px;
+	top: 0;
+	background: #fff;
+	z-index: 999;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+}
+/* Overlay des cards */
+.card-overlay .card-hover {	
+	opacity: 0;	
+	background-color: rgba(255, 255, 255, 0.8);
+}
+/* Apparition overlay sur passage souris */
+.card-overlay:hover .card-hover {
+	opacity: 1;
+}
+
+@media (max-width: 767px) {
+	.fullscreen-modal {
+	  width: 100%;
+	  height: 100%;
+	  top: 0;
+	  left: 0;
+	  transform: none;
+	  border-radius: 0;
+	  box-shadow: none;
+	}
+}
+.menu-mobile{
+	position: fixed;
+	top: 0;
+	z-index: 100;
+}
+/* Apparition du menu en sticky */
+@media (min-width: 768px) {
+	.sticky{
+		position: fixed;
+		top: 0;
+		z-index: 100;
+		opacity: 0;
+		animation-name: fade-in;
+		animation-duration: 300ms;
+		animation-timing-function: ease-in-out;
+		animation-fill-mode: forwards; 
+	}
+	/* Animation lors de l'apparition du menu */
+	@keyframes fade-in {
+		from {
+			opacity: 0; /* Opacité initiale (transparent) */
+		}
+		to {
+			opacity: 1; /* Opacité finale (complètement opaque) */
+		}
+	}
+	
+}
+/* Animation du sliders logo */
+@keyframes slide {
+	0% {
+	  transform: translateX(0);
+	}
+	100% {
+	  transform: translateX(calc(-152px * 9));
+	}
+}
+/* Partie sur le slider des logos */
+.logos {
+	position: relative;
+	overflow: hidden;
+}
+.logos:hover .logos-slide {
+	animation-play-state: paused;
+	cursor: pointer;
+}
+.logos-slide {
+	display: inline-flex;
+	animation: slide 18s infinite linear;
+	
+}
+
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+.logos:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+.logos:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+
+
+
