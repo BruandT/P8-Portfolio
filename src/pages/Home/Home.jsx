@@ -54,12 +54,14 @@ function Home() {
             </div>
           </div>
           <div className='logos w-full py-28'>
+            <div className="logos-track">
             <Carousel
               images={posts?.stacks?.data.map((stacks) => ({
                 imageUrl: stacks.attributes.image.data[0]?.attributes.url,
                 title: stacks.attributes.title,
               }))}
             />
+            </div>
           </div>
         </section>
         {/* Fin partie about */}
