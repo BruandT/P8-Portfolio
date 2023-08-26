@@ -11,7 +11,7 @@ function withOpacity(variableName) {
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
-    "./Components/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     fontFamily: {
