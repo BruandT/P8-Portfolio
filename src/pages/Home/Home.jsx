@@ -10,7 +10,7 @@ function Home() {
 
   useEffect(() => {
     fetch(
-      "http://localhost:1337/api/home?populate=works.card,works.modal,stacks.image,socials.image,works.stacks.image",
+      "https://portfolio-bt-41d83edce5b3.herokuapp.com/api/home?populate=works.card,works.modal,stacks.image,socials.image,works.stacks.image",
       {
         method: "GET",
         headers: {

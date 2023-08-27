@@ -64,7 +64,7 @@ const Card = ({
       <div className='h-80 max-sm:h-56 card-overlay box-border rounded'>
         <img
           className='card-image w-full h-full rounded'
-          src={`http://localhost:1337${images}`}
+          src={`https://portfolio-bt-41d83edce5b3.herokuapp.com${images}`}
           alt={name}
         />
         <div
@@ -98,7 +98,7 @@ const Card = ({
               >
                 <img
                   className='rounded xl:ml-5 w-5/6 max-xl:w-full'
-                  src={`http://localhost:1337${images}`}
+                  src={`https://portfolio-bt-41d83edce5b3.herokuapp.com${images}`}
                   alt=''
                 />
               </div>
@@ -125,7 +125,7 @@ const Card = ({
                       <img
                         key={index}
                         className='w-16 h-16 m-2 max-sm:w-10 object-contain'
-                        src={`http://localhost:1337${tag.imageUrl}`}
+                        src={`https://portfolio-bt-41d83edce5b3.herokuapp.com${tag.imageUrl}`}
                         alt={`Logo ${tag.title}`}
                       />
                     ))}

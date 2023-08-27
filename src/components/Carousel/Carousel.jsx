@@ -12,7 +12,7 @@ const Carousel = ({ images}) => {
           className={`w-40 h-20 mx-8 object-contain ${
             index === duplicatedImages.length - imageArray.length
           }`}
-          src={`http://localhost:1337${image.imageUrl}`}
+          src={`https://portfolio-bt-41d83edce5b3.herokuapp.com${image.imageUrl}`}
           alt={`Logo ${image.title}`}
         />
       ))}

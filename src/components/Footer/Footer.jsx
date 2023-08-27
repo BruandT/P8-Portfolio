@@ -7,7 +7,7 @@ const Footer = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:1337/api/socials?populate=*", {
+    fetch("https://portfolio-bt-41d83edce5b3.herokuapp.com/api/socials?populate=*", {
       method: "GET",
       headers: {
         Accept: "Application/json",
