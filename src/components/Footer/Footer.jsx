@@ -5,9 +5,10 @@ import Social from "../../components/Social/Social";
 
 const Footer = () => {
   const [posts, setPosts] = useState([]);
+  const url = "https://portfolio-bt-41d83edce5b3.herokuapp.com";
 
   useEffect(() => {
-    fetch("https://portfolio-bt-41d83edce5b3.herokuapp.com/api/socials?populate=*", {
+    fetch(`${url}/api/socials?populate=*`, {
       method: "GET",
       headers: {
         Accept: "Application/json",

@@ -7,10 +7,11 @@ import Carousel from "../../components/Carousel/Carousel";
 function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [posts, setPosts] = useState([]);
+  const url = "https://portfolio-bt-41d83edce5b3.herokuapp.com";
 
   useEffect(() => {
     fetch(
-      "https://portfolio-bt-41d83edce5b3.herokuapp.com/api/home?populate=works.card,works.modal,stacks.image,socials.image,works.stacks.image",
+      `${url}/api/home?populate=works.card,works.modal,stacks.image,socials.image,works.stacks.image`,
       {
         method: "GET",
         headers: {

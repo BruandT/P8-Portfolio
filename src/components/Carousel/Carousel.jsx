@@ -3,6 +3,7 @@ import React from "react";
 const Carousel = ({ images}) => {
   const imageArray = Array.isArray(images) ? images : [];
   const duplicatedImages = [...imageArray, ...imageArray];
+  const url = "https://portfolio-bt-41d83edce5b3.herokuapp.com";
 
   return (
     <div className='logos-slide'>
@@ -12,7 +13,7 @@ const Carousel = ({ images}) => {
           className={`w-40 h-20 mx-8 object-contain ${
             index === duplicatedImages.length - imageArray.length
           }`}
-          src={`https://portfolio-bt-41d83edce5b3.herokuapp.com${image.imageUrl}`}
+          src={`${url}${image.imageUrl}`}
           alt={`Logo ${image.title}`}
         />
       ))}

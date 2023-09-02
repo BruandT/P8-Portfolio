@@ -7,4 +7,9 @@ module.exports = ({ env }) => ({
   webhooks: {
     populateRelations: env.bool('WEBHOOKS_POPULATE_RELATIONS', false),
   },
+  plugins: {
+    'content-export-import': {
+      enabled: true,
+    },
+  },
 });

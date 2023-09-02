@@ -1,6 +1,7 @@
 import React from "react";
 
 const Social = ({ post }) => {
+  const url = "https://portfolio-bt-41d83edce5b3.herokuapp.com";
   return (
     <>
       <div className="flex justify-center" id={post.id}>
@@ -11,7 +12,7 @@ const Social = ({ post }) => {
           rel='noopener noreferrer'
         >
           <h3 className="text-xl text-skin-light max-lg:text-base">{post.attributes.title}</h3>
-          <img className="w-8 h-8" src={`https://portfolio-bt-41d83edce5b3.herokuapp.com${post.attributes.image.data.attributes.url}`} alt={`Logo ${post.attributes.title}`} />
+          <img className="w-8 h-8" src={`${url}${post.attributes.image.data.attributes.url}`} alt={`Logo ${post.attributes.title}`} />
         </a>
       </div>
     </>

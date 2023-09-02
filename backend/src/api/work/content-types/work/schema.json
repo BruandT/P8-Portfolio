@@ -33,7 +33,7 @@
       "type": "string"
     },
     "problem": {
-      "type": "string"
+      "type": "text"
     },
     "link_video": {
       "type": "string"

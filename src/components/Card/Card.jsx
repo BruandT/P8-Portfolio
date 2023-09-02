@@ -48,6 +48,7 @@ const Card = ({
   video,
 }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const url = "https://portfolio-bt-41d83edce5b3.herokuapp.com"
 
   function openModal() {
     setModalIsOpen(true);
@@ -64,7 +65,7 @@ const Card = ({
       <div className='h-80 max-sm:h-56 card-overlay box-border rounded'>
         <img
           className='card-image w-full h-full rounded'
-          src={`https://portfolio-bt-41d83edce5b3.herokuapp.com${images}`}
+          src={`${url}${images}`}
           alt={name}
         />
         <div
@@ -98,7 +99,7 @@ const Card = ({
               >
                 <img
                   className='rounded xl:ml-5 w-5/6 max-xl:w-full'
-                  src={`https://portfolio-bt-41d83edce5b3.herokuapp.com${images}`}
+                  src={`${url}${images}`}
                   alt=''
                 />
               </div>
@@ -125,7 +126,7 @@ const Card = ({
                       <img
                         key={index}
                         className='w-16 h-16 m-2 max-sm:w-10 object-contain'
-                        src={`https://portfolio-bt-41d83edce5b3.herokuapp.com${tag.imageUrl}`}
+                        src={`${url}${tag.imageUrl}`}
                         alt={`Logo ${tag.title}`}
                       />
                     ))}
