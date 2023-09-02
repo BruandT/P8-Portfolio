@@ -38,7 +38,7 @@ const Mouse = () => {
     <>
       <button
         id='mouse'
-        className='w-32 h-32 mt-32 mb-20 animate-pulse'
+        className='w-32 h-32 mt-32 mb-20 animate-pulse max-lg:mt-24'
         onClick={handleButtonClick}
       >
         <img
