@@ -109,7 +109,7 @@
 	  transform: translateX(0);
 	}
 	100% {
-	  transform: translateX(calc(-152px * 9));
+	  transform: translateX(calc(-152.5px * 9));
 	}
 }
 /* Partie sur le slider des logos */
