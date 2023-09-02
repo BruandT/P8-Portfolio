@@ -1,26 +1,6 @@
-import { useState, useEffect, React } from "react";
+import { React } from "react";
 
 const Mouse = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  useEffect(() => {
-    // Fonction pour détecter le changement de thème
-    const handleThemeChange = (e) => {
-      setIsDarkMode(e.matches);
-    };
-
-    // Écouter les changements de thème
-    const darkModeMediaQuery = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    );
-    darkModeMediaQuery.addEventListener("change", handleThemeChange);
-
-    // Déterminer le thème initial
-    setIsDarkMode(darkModeMediaQuery.matches);
-
-    // Nettoyer l'écouteur lors du démontage du composant
-    return () =>
-      darkModeMediaQuery.removeEventListener("change", handleThemeChange);
-  }, []);
 
   const handleButtonClick = () => {
     // Trouver l'élément cible par son identifiant (ID) ou en utilisant une référence React (ref)
@@ -42,11 +22,7 @@ const Mouse = () => {
         onClick={handleButtonClick}
       >
         <img
-          src={
-            isDarkMode
-              ? "./assets/icon/mouse.svg"
-              : "./assets/icon/mouse-dark.svg"
-          }
+          src={"./assets/icon/mouse.svg"}
           alt='Icone de souris pour scroll'
         />
       </button>
