@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "language_frs",
+  "info": {
+    "singularName": "language-fr",
+    "pluralName": "language-frs",
+    "displayName": "Language_fr"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "menu_01": {
+      "type": "string"
+    },
+    "menu_02": {
+      "type": "string"
+    },
+    "menu_03": {
+      "type": "string"
+    },
+    "menu_04": {
+      "type": "string"
+    },
+    "session_about": {
+      "type": "string"
+    },
+    "session_work": {
+      "type": "string"
+    }
+  }
+}
