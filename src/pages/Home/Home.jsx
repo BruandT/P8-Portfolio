@@ -47,21 +47,19 @@ function Home() {
           </h2>
           <div className='w-10 h-2 mb-28 rounded bg-skin-bg-color'></div>
           <div className='flex items-center'>
-            <p className='w-full text-xl sm:px-4'>
-              {posts.about}
-            </p>
+            <p className='w-full text-xl sm:px-4'>{posts.about}</p>
             <div className='w-1/2 flex flex-col justify-center items-center max-lg:hidden'>
               <img className='w-2/3' src='./assets/image/Illust.png' alt='' />
             </div>
           </div>
           <div className='logos w-full py-28'>
-            <div className="logos-track">
-            <Carousel
-              images={posts?.stacks?.data.map((stacks) => ({
-                imageUrl: stacks.attributes.image.data[0]?.attributes.url,
-                title: stacks.attributes.title,
-              }))}
-            />
+            <div className='logos-track'>
+              <Carousel
+                images={posts?.stacks?.data.map((stacks) => ({
+                  imageUrl: stacks.attributes.image.data[0]?.attributes.url,
+                  title: stacks.attributes.title,
+                }))}
+              />
             </div>
           </div>
         </section>
