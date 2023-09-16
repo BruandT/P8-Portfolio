@@ -132,10 +132,7 @@ const Card = ({
                   </div>
                 </div>
                 {/* SVG pour fermer la modale */}
-                <button
-                  onClick={closeModal}
-                  style={customStyles.closeButton}
-                >
+                <button onClick={closeModal} style={customStyles.closeButton}>
                   <svg
                     className='h-10 w-10 text-skin-color max-xl:h-8 max-xl:w-8'
                     viewBox='0 0 24 24'
@@ -187,7 +184,7 @@ const Card = ({
                 <div className='mt-3 w-full flex items-center'>
                   <h4 className='text-lg text-skin-base'>Lien du projet :</h4>
                   <a href={link} target='_blank' rel='noopener noreferrer'>
-                    <button className='ml-3 px-2 bg-skin-bg-color text-skin-light rounded'>                      
+                    <button className='ml-3 px-2 bg-skin-bg-color text-skin-light rounded'>
                       Cliquez-ici !
                     </button>
                   </a>

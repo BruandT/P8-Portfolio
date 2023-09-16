@@ -2,7 +2,7 @@ import { useState, useEffect, React } from "react";
 
 const Navigation = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  
+
   useEffect(() => {
     // Mettre à jour l'overflow du body lorsque l'état de isNavOpen change
     document.body.style.overflow = isNavOpen ? "hidden" : "initial";
@@ -74,25 +74,25 @@ const Navigation = () => {
                     scrollToTop();
                   }}
                 >
-                  <li className="font-semibold">
+                  <li className='font-semibold'>
                     <span className='text-skin-color'>/ </span>
                     home
                   </li>
                 </span>
                 <a href='#about' onClick={() => setIsNavOpen(false)}>
-                  <li className="font-semibold">
+                  <li className='font-semibold'>
                     <span className='text-skin-color'>/ </span>
                     about
                   </li>
                 </a>
                 <a href='#work' onClick={() => setIsNavOpen(false)}>
-                  <li className="font-semibold">
+                  <li className='font-semibold'>
                     <span className='text-skin-color'>/ </span>
                     work
                   </li>
                 </a>
                 <a href='#contact' onClick={() => setIsNavOpen(false)}>
-                  <li className="font-semibold">
+                  <li className='font-semibold'>
                     <span className='text-skin-color'>/ </span>
                     contact
                   </li>
@@ -102,19 +102,28 @@ const Navigation = () => {
           </section>
           {/* Desktop menu */}
           <ul className='text-skin-base hidden md:flex space-x-10 pt-5'>
-            <li className='nav-link font-semibold' onClick={() => handleButtonClick("home")}>
+            <li
+              className='nav-link font-semibold'
+              onClick={() => handleButtonClick("home")}
+            >
               /home
               <span className='badge relative bottom-4 right-3 text-xs text-skin-color'>
                 01
               </span>
             </li>
-            <li className='nav-link font-semibold' onClick={() => handleButtonClick("about")}>
+            <li
+              className='nav-link font-semibold'
+              onClick={() => handleButtonClick("about")}
+            >
               /about
               <span className='badge relative bottom-4 right-3 text-xs text-skin-color'>
                 02
               </span>
             </li>
-            <li className='nav-link font-semibold' onClick={() => handleButtonClick("work")}>
+            <li
+              className='nav-link font-semibold'
+              onClick={() => handleButtonClick("work")}
+            >
               /work
               <span className='badge relative bottom-4 right-3 text-xs text-skin-color'>
                 03

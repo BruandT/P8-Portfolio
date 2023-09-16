@@ -7,9 +7,9 @@ function Header() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); 
+      setIsMobile(window.innerWidth <= 768);
     };
-  
+
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -32,7 +32,11 @@ function Header() {
 
   return (
     <>
-      <header className={`absolute w-full bg-skin-bg-base ${isMobile ? "menu-mobile" : ""}`}>
+      <header
+        className={`absolute w-full bg-skin-bg-base ${
+          isMobile ? "menu-mobile" : ""
+        }`}
+      >
         <div
           className={`w-full h-20 px-10 items-center bg-skin-bg-base/95 shadow-header grid grid-cols-3 max-lg:grid-cols-2 text-skin-base ${
             isSticky ? "sticky" : ""

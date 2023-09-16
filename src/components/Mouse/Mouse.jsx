@@ -1,7 +1,6 @@
 import { React } from "react";
 
 const Mouse = () => {
-
   const handleButtonClick = () => {
     // Trouver l'élément cible par son identifiant (ID) ou en utilisant une référence React (ref)
     const targetElement = document.getElementById("about"); // Remplacez 'elementId' par l'ID de l'élément cible
