@@ -5,9 +5,9 @@ function Error404() {
   return (
     <>
       <main className='w-full h-screen flex justify-center items-center'>
-        <div className='h-1/2 w-1/2 flex flex-col justify-center items-center'>
+        <div className='h-1/2 w-1/2 flex flex-col justify-center items-center max-sm:w-full max-sm:h-full'>
           <img
-            className='w-1/2'
+            className='w-1/2 max-lg:w-full'
             src='https://cdn.rawgit.com/ahmedhosna95/upload/1731955f/sad404.svg'
             alt='404'
           />
