@@ -29,6 +29,13 @@
     },
     "about": {
       "type": "text"
+    },
+    "cv": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
