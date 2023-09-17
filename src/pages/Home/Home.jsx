@@ -11,7 +11,7 @@ function Home() {
 
   useEffect(() => {
     fetch(
-      `${url}/api/home?populate=works.card,works.modal,stacks.image,socials.image,works.stacks.image`,
+      `${url}/api/home?populate=works.card,works.modal,stacks.image,socials.image,works.stacks.image,cv`,
       {
         method: "GET",
         headers: {
@@ -47,7 +47,20 @@ function Home() {
           </h2>
           <div className='w-10 h-2 mb-28 rounded bg-skin-bg-color'></div>
           <div className='flex items-center'>
-            <p className='w-full text-xl sm:px-4'>{posts.about}</p>
+            <div className='w-full flex flex-col items-center'>
+              <p className='text-xl sm:px-4'>{posts.about}</p>
+              <a
+                href={posts?.cv?.data.attributes.url}
+                target='_blank'
+                rel='noreferrer'
+                download='Thomas-Bruand-CV'
+                className="mt-8"
+              >
+                <button className='h-8 ml-3 px-2 bg-skin-bg-color text-skin-light rounded'>
+                  Télécharger mon CV
+                </button>
+              </a>
+            </div>
             <div className='w-1/2 flex flex-col justify-center items-center max-lg:hidden'>
               <img className='w-2/3' src='./assets/image/Illust.png' alt='' />
             </div>
