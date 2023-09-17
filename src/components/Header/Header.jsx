@@ -42,7 +42,7 @@ function Header() {
             isSticky ? "sticky" : ""
           }`}
         >
-          <a href='#home'>
+          <a href='/'>
             <p className='h-full'>
               <span className='text-skin-color font-semibold text-4xl max-md:text-2xl'>
                 &gt;_
